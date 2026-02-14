@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct APODRateLimits {
+    let limit: Int?
+    let remaining: Int?
+}

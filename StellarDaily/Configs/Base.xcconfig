@@ -7,3 +7,12 @@
 
 // Configuration settings file format documentation can be found at:
 // https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+// Safe fallback so project builds even without Secrets.xcconfig
+// Or replace DEMO_KEY with your own personal key
+NASA_API_KEY = DEMO_KEY
+
+// If Secrets.xcconfig exists locally (or create it), then override the fallback
+// Replace with your personal key like: NASA_API_KEY = YOUR_KEY
+// Otherwise remove `Secrets.xcconfig` reference from the project if it's exist
+#include? "Secrets.xcconfig"

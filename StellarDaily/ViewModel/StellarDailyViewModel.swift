@@ -1,5 +1,5 @@
 //
-//  StellarDaily.swift
+//  StellarDailyViewModel.swift
 //  StellarDaily
 //
 //  Created by Oleksandr Yevdokymov on 14.02.2026.
@@ -9,8 +9,13 @@ import Foundation
 import SwiftUI
 import Combine
 
+protocol StellarDailyViewModelProtocol: ObservableObject {
+    var state: ScreenState { get }
+    func load(date: String?) async
+}
+
 @MainActor
-final class StellarDailyViewModel: ObservableObject {
+final class StellarDailyViewModel: StellarDailyViewModelProtocol {
 
     // MARK: - State
 
@@ -68,19 +73,23 @@ final class StellarDailyViewModel: ObservableObject {
     }
 
     private func buildMediaForNetwork(apod: APOD) async throws -> APODContent.Media {
+        guard let urlValue = apod.urlValue else {
+            throw APODClientError.invalidMediaURL(apod.url)
+        }
+        
         switch apod.mediaType {
         case .image:
-            let data = try await mediaDownloader.downloadData(from: apod.url)
+            let data = try await mediaDownloader.downloadData(from: urlValue)
             return .image(data: data)
 
         case .video:
             let thumbData: Data?
-            if let thumbURL = apod.thumbnailURL {
+            if let thumbURL = apod.thumbnailURLValue {
                 thumbData = try? await mediaDownloader.downloadData(from: thumbURL)
             } else {
                 thumbData = nil
             }
-            return .video(embedURL: apod.url, thumbnailData: thumbData)
+            return .video(embedURL: urlValue, thumbnailData: thumbData)
         }
     }
 
@@ -106,18 +115,19 @@ final class StellarDailyViewModel: ObservableObject {
         let media: APODContent.Media
         switch apod.mediaType {
         case .image:
-            // Preserve your original behavior (non-optional image data).
             media = .image(data: cachedMediaData ?? Data())
 
         case .video:
-            media = .video(embedURL: apod.url, thumbnailData: cachedMediaData)
+            guard let embedURL = apod.urlValue else {
+                // cached APOD has an invalid URL string -> no valid fallback
+                return nil
+            }
+            media = .video(embedURL: embedURL, thumbnailData: cachedMediaData)
         }
 
-        return APODContent(
-            apod: apod,
-            media: media,
-            rateLimits: nil,
-            isFromCache: true
-        )
+        return APODContent(apod: apod,
+                           media: media,
+                           rateLimits: nil,
+                           isFromCache: true)
     }
 }

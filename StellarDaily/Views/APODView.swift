@@ -1,5 +1,5 @@
 //
-//  APODScreen.swift
+//  APODView.swift
 //  StellarDaily
 //
 //  Created by Oleksandr Yevdokymov on 14.02.2026.
@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct APODView: View {
-    @ObservedObject var viewModel: StellarDailyViewModel
+struct APODView<ViewModel: StellarDailyViewModelProtocol>: View {
+    @ObservedObject var viewModel: ViewModel
     let title: String
 
     var body: some View {

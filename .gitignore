@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Xcode / build
+build/
+DerivedData/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Per-user Xcode settings
+xcuserdata/
+*.moved-aside
+*.swp
+
+# SwiftPM / Xcode
+.swiftpm/
+Package.resolved
+
+# Secrets
+StellarDaily/Configs/Secrets.xcconfig
+
