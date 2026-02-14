@@ -20,6 +20,7 @@ final class StellarDailyUITestsLaunchTests: XCTestCase {
     @MainActor
     func testLaunch() throws {
         let app = XCUIApplication()
+        app.launchArguments = ["UI_TESTING"]
         app.launch()
 
         // Insert steps here to perform after app launch but before taking a screenshot,
