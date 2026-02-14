@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7FBDEA6E2F40D0EC00F2D54F /* Base.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDEA652F40D0EC00F2D54F /* Base.xcconfig */; };
-		7FBDEA6F2F40D0EC00F2D54F /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDEA662F40D0EC00F2D54F /* Secrets.xcconfig */; };
 		7FBDEA702F40D0EC00F2D54F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDEA682F40D0EC00F2D54F /* Assets.xcassets */; };
 		7FBDEA722F40D0EC00F2D54F /* NASAConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDEA6A2F40D0EC00F2D54F /* NASAConfig.swift */; };
 		7FBDEA732F40D0EC00F2D54F /* StellarDailyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDEA6B2F40D0EC00F2D54F /* StellarDailyApp.swift */; };
@@ -30,6 +29,7 @@
 		7FBDEA982F40E46C00F2D54F /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDEA972F40E46C00F2D54F /* AppContainer.swift */; };
 		7FBDEA9B2F40F3E000F2D54F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDEA9A2F40F3E000F2D54F /* Date+Extensions.swift */; };
 		7FBDEA9D2F40F3FD00F2D54F /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDEA9C2F40F3FD00F2D54F /* UIDevice+Extensions.swift */; };
+		7FBDEAB72F41113C00F2D54F /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDEAB62F41113C00F2D54F /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,6 @@
 		7FBDEA392F40B37800F2D54F /* StellarDailyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarDailyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDEA432F40B37800F2D54F /* StellarDailyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StellarDailyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDEA652F40D0EC00F2D54F /* Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Base.xcconfig; sourceTree = "<group>"; };
-		7FBDEA662F40D0EC00F2D54F /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 		7FBDEA682F40D0EC00F2D54F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FBDEA692F40D0EC00F2D54F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FBDEA6A2F40D0EC00F2D54F /* NASAConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAConfig.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		7FBDEA972F40E46C00F2D54F /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		7FBDEA9A2F40F3E000F2D54F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		7FBDEA9C2F40F3FD00F2D54F /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		7FBDEAB62F41113C00F2D54F /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -141,7 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				7FBDEA652F40D0EC00F2D54F /* Base.xcconfig */,
-				7FBDEA662F40D0EC00F2D54F /* Secrets.xcconfig */,
+				7FBDEAB62F41113C00F2D54F /* Secrets.xcconfig */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -334,8 +334,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FBDEA6E2F40D0EC00F2D54F /* Base.xcconfig in Resources */,
-				7FBDEA6F2F40D0EC00F2D54F /* Secrets.xcconfig in Resources */,
 				7FBDEA702F40D0EC00F2D54F /* Assets.xcassets in Resources */,
+				7FBDEAB72F41113C00F2D54F /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

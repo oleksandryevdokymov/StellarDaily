@@ -18,5 +18,5 @@ xcuserdata/
 Package.resolved
 
 # Secrets
-StellarDaily/Configs/Secrets.xcconfig
+**/Secrets.local.xcconfig
 
